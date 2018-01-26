@@ -1,0 +1,18 @@
+{
+  "name": "contract",
+  "version": "1.0.0",
+  "description": "a contract of eth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eth"
+  ],
+  "author": "llG",
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.4.19",
+    "web3": "^0.20.4"
+  }
+}

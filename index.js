@@ -33,7 +33,8 @@ var defaultAccount = web3.eth.defaultAccount;
 console.log("defaultAccount: ",defaultAccount);
 
 
-//基本信息
+// 基本信息----------------------------------------------------
+
 // console.log("Current provider: ",web3.currentProvider);
 // console.log("Node",web3.version.node);
 // console.log("Network",web3.version.network);
@@ -59,6 +60,9 @@ console.log("estimateGas: ",web3.eth.estimateGas({
     data: "0xc6888fa10000000000000000000000000000000000000000000000000000000000000003"
 }));
 
+// 合约操作----------------------------------------------------
+
+
 // 得到合约对象
 let toAddressQP = '0xa659250745AB74C11b9407B3DF563D7FB10B56e8';
 // var contractAddress = '0xB477686CA8Fd5E1DAc2700fCbC2f880Ae28DB851';
@@ -69,7 +73,6 @@ var contractRenhui = web3.eth.contract(contractABI);
 // instantiate by address
 var contractInstance = contractRenhui.at(contractAddress);
 
-/// 合约操作
 function funcControlContract () {
     //使用transaction方式调用，写入到区块链上
 contractInstance.add.sendTransaction(2, 1,{
@@ -124,9 +127,8 @@ web3.eth.sendTransaction({data: code}, function(err, transactionHash) {
 //     console.log('SHA3 signed msg op - '+sig);
 }
 
-// ----------------------------------------------------
+// 日志----------------------------------------------------
 
-// // 日志
 // // can be 'latest' or 'pending'
 // var filter = web3.eth.filter('latest');
 // // watch for changes
@@ -149,7 +151,7 @@ web3.eth.sendTransaction({data: code}, function(err, transactionHash) {
 
 // filter.stopWatching();
 
-// ----------------------------------------------------
+// 事件----------------------------------------------------
 
 
 // watch for an event with {some: 'args'}
